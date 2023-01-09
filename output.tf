@@ -19,5 +19,5 @@ output "natgw_id" {
 }
 
 output "nat_on" {
- value = aws_route.nat_on[0].id
+ value = var.enable_natgw ? aws_route.nat_on[0].id : null
 }
