@@ -75,9 +75,9 @@ resource "aws_nat_gateway" "nat-gw" {
   depends_on = [aws_internet_gateway.igw]
 }
 resource "aws_eip" "eip" {
-  count = var.enable_natgw ? 1 : 0
+  count    = var.enable_natgw ? 1 : 0
   domain   = "vpc"
-  tags = {
+  tags     = {
     Name = "${var.environment}-${var.project}"
   }
 }
